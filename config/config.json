@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "ziv-1-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/ziv1/Ziv1WebPart.js",
+          "manifest": "./src/webparts/ziv1/Ziv1WebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "Ziv1WebPartStrings": "lib/webparts/ziv1/loc/{locale}.js"
+  }
+}
