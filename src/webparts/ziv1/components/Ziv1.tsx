@@ -1,33 +1,28 @@
 import * as React from 'react';
-// import { useState } from 'react';
+import { useState } from 'react';
 import type { IZiv1Props } from './IZiv1Props';
 import '../../../../assets/dist/tailwind.css';
-import Card from "./Card";
 import Pillars from './Pillars';
 import Levels from './Levels';
+import Carousel from './Carousel';
 
-    const Ziv1: React.FC<IZiv1Props> = (props) => {
-      const { trainingData } = props;
-      console.log(trainingData);
+const Ziv1: React.FC<IZiv1Props> = (props) => {
+  const { trainingData } = props;
+  const [selectedFilter, setSelectedFilter] = useState('All');
+  const [selectedLevel, setSelectedLevel] = useState('All Levels');
 
-      
-
-    return (
-    <div className="w-full border-red-900 border-8 relative overflow-x-hidden">
-      <div className="p-1 text-4xl text-red-900 text-center font-sans">
-        <h1>Moshe Ashkenazi</h1>
-        <Pillars/>
-        <Levels/>
-        <div id="carousel" className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth p-4"
-         style={{ scrollSnapType: 'x mandatory', width: '100%', display: 'flex', flexWrap: 'nowrap' }}>
-          {trainingData.producttraining.map((e, i) => (
-            <Card key={i} data={e} />
-            ))}
-        </div>
+  return (
+    <div className="w-full relative overflow-hidden p-4">
+      <h1 className="text-[#ee0c5d] text-[22px] mb-8">Technical Training</h1>
+      <div className="flex items-center justify-start space-x-2 p-2 max-w-[400px] mb-8">
+        <Pillars selectedFilter={selectedFilter} onFilterChange={setSelectedFilter} />
+        <Levels selectedLevel={selectedLevel} onLevelChange={setSelectedLevel} />
       </div>
-</div>
-
+      
+      {/* קרוסלה */}
+      <Carousel courses={trainingData.producttraining} selectedFilter={selectedFilter} selectedLevel={selectedLevel} />
+    </div>
   );
-  };
+};
 
-  export default Ziv1;
+export default Ziv1;
