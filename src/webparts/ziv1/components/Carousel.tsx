@@ -22,16 +22,15 @@ interface CarouselProps {
 const Carousel: React.FC<CarouselProps> = ({ courses, selectedFilter, selectedLevel }) => {
     // Filter courses based on the selected filter and level
     const filteredCourses = courses.filter((course) => {
+        const hasPercentage = course.PercentageComplete !== undefined && course.PercentageComplete !== null;
         const matchesFilter = selectedFilter === 'All' || course.pillar === selectedFilter;// Check if course matches the selected filter based on pillar
         const matchesLevel = selectedLevel === 'All Levels' || course.levelName === selectedLevel;// Check if course matches the selected level
-        // Include course only if both conditions are true
-        return matchesFilter && matchesLevel;
+        // Include course only if all conditions are true
+        return hasPercentage && matchesFilter && matchesLevel;
     });
     const [currentIndex, setCurrentIndex] = React.useState(0);
     const handleNext = () => {
-        setCurrentIndex((prevIndex) =>
-            prevIndex === filteredCourses.length - 1 ? 0 : prevIndex + 1
-        );
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % filteredCourses.length);
     };
 
     // const handlePrev = () => {

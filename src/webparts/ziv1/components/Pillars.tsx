@@ -13,7 +13,7 @@ const Pillars: React.FC<PillarsProps> = ({ selectedFilter, onFilterChange }) => 
     return (
         <div className="flex items-center gap-2">
         <div className="text-[#41273c] text-lg">Pillar</div>
-        <div className="h-8 flex border border-[#41273c] rounded-full overflow-hidden divide-x divide-[#41273c] flex-shrink-0">
+        <div className="h-8 text-lg flex border border-[#41273c] rounded-full overflow-hidden divide-x divide-[#41273c]">
             {filters.map((filter) => (
                 <button
                     key={filter}
