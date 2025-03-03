@@ -10,6 +10,8 @@ import Levels from './Levels';
       const { trainingData } = props;
       console.log(trainingData);
 
+      
+
     return (
     <div className="w-full border-red-900 border-8 relative overflow-x-hidden">
       <div className="p-1 text-4xl text-red-900 text-center font-sans">
