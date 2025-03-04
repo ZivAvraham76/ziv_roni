@@ -22,7 +22,7 @@ const Levels: React.FC<LevelsProps> = ({ selectedLevel, onLevelChange }) => {
 
     return (
         <div className="relative inline-block text-left h-full">
-            <button onClick={toggleDropdown} className="w-[150px] h-8 px-2 py-1 pr-8 rounded-full text-[#41273c] text-lg ring-gray-400 flex items-center justify-between whitespace-nowrap w-[120px] border border-[#41273c]">
+            <button onClick={toggleDropdown} className="w-[150px] h-8 px-2 py-1 pr-8 rounded-lg text-[#41273c] text-lg ring-gray-400 flex items-center justify-between whitespace-nowrap w-[120px] border border-[#41273c]">
             <span className="text-[#41273c] text-sm font-medium">
             {selectedLevel === "All Levels" ? "Select Level" : selectedLevel}
                 </span>

@@ -17,7 +17,7 @@ const CardHeader: React.FC<CardHeaderProps> = ({ levelName }) => {
                 <svg width="107" height="23" viewBox="0 0 107 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M106 1H1V22H106L100.653 12L106 1Z" fill="white" stroke="#F1F1F1" />
                 </svg>
-                <div className="absolute inset-0 flex items-center pl-2 text-xs text-[#41273c] font-bold text-left w-full">
+                <div className="absolute inset-0 flex items-center pl-2 text-[10px] text-[#41273c] font-bold text-left w-full">
                     {levelName || 'Level'}
                 </div>
             </div>
