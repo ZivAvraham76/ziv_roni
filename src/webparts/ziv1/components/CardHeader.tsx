@@ -1,4 +1,5 @@
 import * as React from "react";
+import '../../../../assets/dist/tailwind.css';
 
 
 interface CardHeaderProps {
@@ -7,9 +8,9 @@ interface CardHeaderProps {
 
 const CardHeader: React.FC<CardHeaderProps> = ({ levelName }) => {
     return (
-        <div className="relative w-full h-[100px] overflow-hidden">
+        <div className="relative w-full h-[121px] flex-shrink-0 overflow-hidden">
             {/* Course Image */}
-            <img className="w-full h-full object-cover rounded-t-lg" src="https://picsum.photos/160" alt="Course" />
+            <img className="w-full h-full object-cover" src="https://picsum.photos/160" alt="Course" />
 
             {/* Level Badge */}
             <div className="absolute top-2 left-2 w-[107px] flex items-center justify-center">

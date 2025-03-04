@@ -46,7 +46,7 @@ const Carousel: React.FC<CarouselProps> = ({ courses, selectedFilter, selectedLe
     return (
         <div className='relative w-full  mx-auto overflow-hidden'>
             <div
-                className="flex transition-transform duration-500 ease-in-out gap-8"
+                className="flex transition-transform duration-500 ease-in-out gap-[25px]"
                 style={{ transform: `translateX(-${currentIndex * 25}%)` }}
             >
                 {filteredCourses.map((course, index) => (
